@@ -1,0 +1,36 @@
+{
+  "name": "vdatetime",
+  "version": "3.1.0",
+  "description": "Wrapper for Date Object made for cross-browser compatibility",
+  "main": "lib/datetime.min.js",
+  "scripts": {
+    "transpile": "node_modules/babel-cli/bin/babel.js src --out-dir build",
+    "minify": "node_modules/uglifyjs/bin/uglifyjs -c -m -o lib/datetime.min.js build/datetime.js",
+    "build-js": "npm run transpile && npm run minify",
+    "prepublishOnly": "npm run build-js"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "keywords": [
+    "date",
+    "time",
+    "datetime",
+    "javascript",
+    "cross-browser"
+  ],
+  "author": "Steinmann Victor <victor.steinmann@viacesi.fr>",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.24.1",
+    "babel-core": "^6.24.1",
+    "babel-preset-es2015": "^6.24.1",
+    "uglifyjs": "^2.4.10"
+  },
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/ingenidoc/vDateTime.git"
+  }
+}
